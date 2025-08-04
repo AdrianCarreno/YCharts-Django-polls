@@ -1,0 +1,30 @@
+name: Lint code
+
+on:
+  push:
+    branches:
+      - main # If the main branch is protected against pushes, this line can be removed
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    timeout-minutes: 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GitHub Action
+        uses: actions/checkout@v4
+
+      - name: Install the latest version of ruff
+        uses: astral-sh/ruff-action@v3
+
+      - name: Check formatting
+        run: ruff format --check
+
+      - name: Check linting
+        run: ruff check
