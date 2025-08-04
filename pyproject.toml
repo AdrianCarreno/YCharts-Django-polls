@@ -19,6 +19,7 @@ select = ["F", "E", "W", "I", "N", "C90", "ARG"]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["F401"]
+"djangopolls/settings.py" = ["E501"]
 "tests/*" = ["ARG001", "ARG002"]
 
 [tool.ruff.lint.isort]
