@@ -6,10 +6,15 @@ version = "0.1.0"
 description = "YCharts onboarding app"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = ["django>=5.2.4"]
+dependencies = [
+    "django>=5.2.4",
+    "django-debug-toolbar>=6.0.0",
+]
 
 [dependency-groups]
-dev = ["ruff>=0.12.7"]
+dev = [
+    "ruff>=0.12.7",
+]
 
 # ----------------------------- Ruff Configuration -----------------------------
 
